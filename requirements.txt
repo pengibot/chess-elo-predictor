@@ -1,0 +1,17 @@
+chess~=1.10.0
+stockfish~=3.28.0
+pandas~=2.2.2
+numpy~=1.26.4
+matplotlib~=3.8.4
+imageio~=2.33.1
+scikit-learn~=1.4.2
+scikit-image~=0.23.2
+liac-arff~=2.5.0
+tensorflow<2.11
+keras~=2.10.0
+seaborn~=0.13.2
+xgboost~=2.1.1
+lightgbm~=4.5.0
+catboost~=1.2.3
+statsmodels~=0.14.2
+pydot~=1.4.2
