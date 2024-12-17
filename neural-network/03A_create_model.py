@@ -41,8 +41,25 @@ def extract_ratings(filename):
     return white_rating, black_rating
 
 
+def process_files(directory):
+    """Checks if the filename matches the chessboard move format and is a PNG file."""
+    filenames = os.listdir(directory)
+    pattern = r'chessboard_move_(\d+)_'  # Regex for move number
+    for filename in filenames:
+        move_number_match = re.search(pattern, filename)
+
+        if move_number_match and filename.endswith(".png"):
+            continue
+        else:
+            full_path = os.path.join(directory, filename)
+            os.remove(full_path)
+            print(f"Deleted '{filename}'.")
+
+
 def load_images_and_labels_from_game(game_path):
+    process_files(game_path)
     filenames = os.listdir(game_path)
+    print(game_path)
     filenames = sorted(filenames, key=extract_move_number)
 
     images = []
